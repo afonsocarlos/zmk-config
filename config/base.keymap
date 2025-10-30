@@ -149,7 +149,7 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
                 bindings = <BINDING1>, <BINDING2>;)
 
 // Tap: comma | Shift + tap: semicolon
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp SEMICOLON)
+SIMPLE_MORPH(comma_morph, SFT, &kp SEMICOLON, &kp COMMA)
 
 // Tap: dot | Shift + tap: colon
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
