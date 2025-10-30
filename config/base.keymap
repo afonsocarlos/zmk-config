@@ -17,7 +17,7 @@
 #define FN 2
 #define NUM 3
 #define SYS 4
-#define MOUSE 5
+#define MEDIA 5
 
 #define XXX &none
 #define ___ &trans
@@ -130,10 +130,10 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 
 // Smart-mouse, requires tri-state module.
 ZMK_TRI_STATE(
-    smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
+    smart_mouse, bindings = <&tog MEDIA>, <&none>, <&tog MEDIA>;
     ignored-key-positions =
         <LT1 LT2 LH0 LH1 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1>;
-    ignored-layers = <MOUSE NAV FN>;)
+    ignored-layers = <MEDIA NAV FN>;)
 
 /* Custom behaviors */
 
@@ -190,7 +190,7 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
 /* Keymap */
 
-ZMK_CONDITIONAL_LAYER(sys, FN NAV, SYS) // FN + NAV --> SYS.
+ZMK_CONDITIONAL_LAYER(sys, MEDIA NAV, SYS) // MEDIA + NAV --> SYS.
 
 #ifndef ZMK_BASE_LAYER
   #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                 \
@@ -205,7 +205,7 @@ ZMK_BASE_LAYER(Base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp Z         &kp X         &kp C         &kp D         &kp V       ,   &kp K         &kp H         &comma_morph  &dot_morph    &qexcl      ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                                 SMART_NUM &lt_spc FN 0,   &lt NAV RET    MAGIC_SHIFT
+                                                 SMART_NUM &lt_spc MEDIA 0,   &lt NAV RET    MAGIC_SHIFT
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
@@ -257,15 +257,15 @@ ZMK_BASE_LAYER(Sys,
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
-ZMK_BASE_LAYER(Mouse,
+ZMK_BASE_LAYER(Media,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    ___           ___           ___           ___           ___         ,   ___           &kp PG_UP     U_MS_U         &kp PG_DN    ___         ,
+    U_WH_U        &mkp RCLK     U_MS_U        &mkp LCLK     ___         ,   &kp C_MUTE    &kp C_RW      ___           &kp C_FF      &kp PSCRN   ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    ___           ___           ___           ___           ___         ,   U_WH_L        U_MS_L        U_MS_D         U_MS_R       U_WH_R      ,
+    U_WH_D        U_MS_L        U_MS_D        U_MS_R        ___         ,   &kp C_VOL_UP  &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp C_BRI_UP,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    ___           ___           ___           ___           ___         ,   ___           &mkp LCLK     &mkp MCLK      &mkp RCLK    ___         ,
+    U_WH_L        &mkp MB4      &mkp MCLK     &mkp MB5      U_WH_R      ,   &kp C_VOL_DN  ___           ___           ___           &kp C_BRI_DN,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                              ___           ___         ,   U_WH_U        U_WH_D
+                                              ___           ___         ,   ___           ___
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
