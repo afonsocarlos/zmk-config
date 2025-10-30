@@ -146,13 +146,11 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
                 bindings = <BINDING1>, <BINDING2>;)
 
-// Tap: comma | Shift + tap: semicolon | Ctrl + shift + tap: <.
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
-SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
+// Tap: comma | Shift + tap: semicolon
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp SEMICOLON)
 
-// Tap: dot | Shift + tap: colon | Ctrl + shift + tap: >.
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
-SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
+// Tap: dot | Shift + tap: colon
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
 
 // Tap: qmark | Shift + tap: excl.
 SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
@@ -211,13 +209,13 @@ ZMK_BASE_LAYER(Base,
 
 ZMK_BASE_LAYER(Nav,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp LA(F4)    ___           &kp LS(TAB)   &swapper      ___         ,   ___           &kp PG_DN     &kp PG_UP      NAV_DEL      NAV_BSPC    ,
+    &kp LA(F4)    ___           &kp LS(TAB)   &swapper      ___         ,   &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       NAV_BSPC    ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &sk LGUI      &sk LALT      &sk LSHFT     &sk LCTRL     ___         ,   NAV_LEFT      NAV_DOWN      NAV_UP        NAV_RIGHT     &kp RET     ,
+    &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT     ___         ,   NAV_LEFT      NAV_DOWN      NAV_UP        NAV_RIGHT     &kp RET     ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     ___           ___           ___           ___           ___         ,   &kp INS       &kp TAB       ___           ___           ___         ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                              ___           ___         ,   ___           CANCEL
+                                              ___           ___         ,   ___           ___
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
