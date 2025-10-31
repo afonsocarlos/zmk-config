@@ -12,16 +12,6 @@
   #define _BT_SEL_KEYS_ &trans &trans &trans &trans &trans
 #endif
 
-#undef MOD_LCTL
-#undef MOD_LGUI
-#undef MOD_RCTL
-#undef MOD_RGUI
-
-#define MOD_LCTL 0x08
-#define MOD_LGUI 0x01
-#define MOD_RCTL 0x80
-#define MOD_RGUI 0x10
-
 #define DEF 0
 #define NAV 1
 #define FN 2
@@ -189,6 +179,11 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 
 // Sticky shift + leader.
 ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
+
+ZMK_MACRO(close_win, bindings = <&kp LA(F4)>;)
+ZMK_MACRO(lock_sys, bindings = <&kp LG(L)>;)
+ZMK_MACRO(bspc_word, bindings = <&kp LC(BSPC)>;)
+ZMK_MACRO(del_word, bindings = <&kp LC(DEL)>;)
 
 /* Sym cluster */
 
