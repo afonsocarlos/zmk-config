@@ -12,6 +12,16 @@
   #define _BT_SEL_KEYS_ &trans &trans &trans &trans &trans
 #endif
 
+#undef MOD_LCTL
+#undef MOD_LGUI
+#undef MOD_RCTL
+#undef MOD_RGUI
+
+#define MOD_LCTL 0x08
+#define MOD_LGUI 0x01
+#define MOD_RCTL 0x80
+#define MOD_RGUI 0x10
+
 #define DEF 0
 #define NAV 1
 #define FN 2
