@@ -140,17 +140,20 @@ ZMK_TRI_STATE(
 
 /* Custom behaviors */
 
-// Super+Tab application swapper, requires tri-state module.
-ZMK_TRI_STATE(app_swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-              ignored-key-positions = <LT2 RM0 RM1 RM2 RM3>;)
-
 // Ctrl+Tab tab swapper, requires tri-state module.
 ZMK_TRI_STATE(tab_swapper, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
-              ignored-key-positions = <LT2 RM0 RM1 RM2 RM3>;)
+              ignored-key-positions = <LT2 RM0 RM1 RM2 RM3 RH0>;
+              ignored-layers = <NAV>;)
+
+// Super+Tab application swapper, requires tri-state module.
+ZMK_TRI_STATE(app_swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+              ignored-key-positions = <LM2 RM0 RM1 RM2 RM3 RH0>;
+              ignored-layers = <NAV>;)
 
 // Alt+` application window swapper, requires tri-state module.
 ZMK_TRI_STATE(win_swapper, bindings = <&kt LALT>, <&kp GRAVE>, <&kt LALT>;
-              ignored-key-positions = <LM2 RM0 RM1 RM2 RM3>;)
+              ignored-key-positions = <LB2 RM0 RM1 RM2 RM3 RH0>;
+              ignored-layers = <NAV>;)
 
 // Define mod-morph with a *single* mod trigger for less repetition.
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
@@ -232,13 +235,13 @@ ZMK_BASE_LAYER(Base,
 
 ZMK_BASE_LAYER(Mac,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp Q         &kp W         &kp F         &kp P         &kp B       ,   &kp J         &kp L         &kp U         &kp Y         &kp SQT     ,
+    ___           ___           ___           ___           ___         ,   ___           ___           ___           ___           ___         ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &hml LGUI A   &hml LALT R   &hml LCTRL S  &hml LSHFT T  &kp G       ,   &kp M         &hmr RSHFT N  &hmr LCTRL E  &hmr LALT I   &hmr LGUI O ,
+    ___           ___           ___           ___           ___         ,   ___           ___           ___           ___           ___         ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &lt SYM Z     &kp X         &kp C         &kp D         &kp V       ,   &kp K         &kp H         &comma_morph  &dot_morph    &qexcl      ,
+    ___           ___           ___           ___           ___         ,   ___           ___           ___           ___           ___         ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                              SMART_NUM     &lt_spc MEDIA 0,   &lt NAV RET    MAGIC_SHIFT
+                                              ___           ___         ,   ___           ___
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
