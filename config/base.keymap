@@ -208,8 +208,8 @@ ZMK_MACRO(sel_linux, bindings = <&to DEF &uc UC_SET_LINUX>;)
 ZMK_MACRO(sel_macos, bindings = <&to MAC &uc UC_SET_MACOS>;)
 
 // Automatic OS Layer Swap for specific Bluetooth Profile
-ZMK_MACRO_ONE_PARAM(bt_sel_linux, bindings = <&macro_param_1to1>, <&bt BT_SEL MACRO_PLACEHOLDER >, <&sel_linux>; wait-ms = <0>;)
-ZMK_MACRO_ONE_PARAM(bt_sel_macos, bindings = <&macro_param_1to1>, <&bt BT_SEL MACRO_PLACEHOLDER >, <&sel_macos>; wait-ms = <0>;)
+ZMK_MACRO_ONE_PARAM(bt_sel_linux, bindings = <&sel_linux>, <&macro_param_1to1>, <&bt BT_SEL MACRO_PLACEHOLDER>; wait-ms = <40>; tap-ms = <40>;)
+ZMK_MACRO_ONE_PARAM(bt_sel_macos, bindings = <&sel_macos>, <&macro_param_1to1>, <&bt BT_SEL MACRO_PLACEHOLDER>; wait-ms = <40>; tap-ms = <40>;)
 
 /* Keymap */
 
