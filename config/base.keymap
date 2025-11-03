@@ -214,6 +214,7 @@ ZMK_MACRO_ONE_PARAM(bt_sel_macos, bindings = <&macro_param_1to1>, <&bt BT_SEL MA
 /* Keymap */
 
 ZMK_CONDITIONAL_LAYER(sys, MEDIA NAV, SYS) // MEDIA + NAV --> SYS.
+ZMK_CONDITIONAL_LAYER(sys, MEDIA NAVX, SYS) // MEDIA + NAVX --> SYS.
 
 #ifndef ZMK_BASE_LAYER
   #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                 \
