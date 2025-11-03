@@ -23,9 +23,6 @@
 #define XXX &none
 #define ___ &trans
 
-#define U_S_MACOS UC_SET_MACOS
-#define U_S_LINUX UC_SET_LINUX
-
 /* Global defaults */
 
 #define QUICK_TAP_MS 175
@@ -204,6 +201,10 @@ ZMK_MACRO(fat_arrow,  bindings = <&kp EQUAL &kp GT>;)  // =>
 ZMK_MACRO(double_col, bindings = <&kp COLON &kp COLON>;) // ::
 ZMK_MACRO(pipe_op,    bindings = <&kp PIPE &kp GT>;)    // |>
 
+// OS Layers Swap
+ZMK_MACRO(sel_linux, bindings = <&to DEF &uc UC_SET_LINUX>;)
+ZMK_MACRO(sel_macos, bindings = <&to MAC &uc UC_SET_MACOS>;)
+
 /* Keymap */
 
 ZMK_CONDITIONAL_LAYER(sys, MEDIA NAV, SYS) // MEDIA + NAV --> SYS.
@@ -291,7 +292,7 @@ ZMK_BASE_LAYER(Sys,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &out OUT_BLE  ___           ___           ___           &bootloader ,   &bootloader   ___           ___           ___           ___         ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &out OUT_USB  &uc U_S_MACOS &uc U_S_LINUX ___           &sys_reset  ,   &sys_reset    ___           ___           ___           ___         ,
+    &out OUT_USB  &sel_macos    &sel_linux    ___           &sys_reset  ,   &sys_reset    ___           ___           ___           ___         ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
                                               ___           ___         ,   ___           ___
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
