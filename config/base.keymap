@@ -203,13 +203,13 @@ ZMK_MACRO(fat_arrow,  bindings = <&kp EQUAL &kp GT>;)  // =>
 ZMK_MACRO(double_col, bindings = <&kp COLON &kp COLON>;) // ::
 ZMK_MACRO(pipe_op,    bindings = <&kp PIPE &kp GT>;)    // |>
 
-// OS Layers Swap
-ZMK_MACRO(sel_linux, bindings = <&to DEF &uc UC_SET_LINUX>;)
-ZMK_MACRO(sel_macos, bindings = <&to MAC &uc UC_SET_MACOS>;)
+// Unicode OS swap
+#define U_S_MACOS &uc UC_SET_MACOS
+#define U_S_LINUX &uc UC_SET_LINUX
 
 // Automatic OS Layer Swap for specific Bluetooth Profile
-ZMK_MACRO_ONE_PARAM(bt_sel_linux, bindings = <&sel_linux>, <&macro_param_1to1>, <&bt BT_SEL MACRO_PLACEHOLDER>; wait-ms = <40>; tap-ms = <40>;)
-ZMK_MACRO_ONE_PARAM(bt_sel_macos, bindings = <&sel_macos>, <&macro_param_1to1>, <&bt BT_SEL MACRO_PLACEHOLDER>; wait-ms = <40>; tap-ms = <40>;)
+ZMK_MACRO_ONE_PARAM(bt_sel_linux, bindings = <&macro_param_1to1>, <&bt BT_SEL MACRO_PLACEHOLDER>, <U_S_LINUX>;)
+ZMK_MACRO_ONE_PARAM(bt_sel_macos, bindings = <&macro_param_1to1>, <&bt BT_SEL MACRO_PLACEHOLDER>, <U_S_MACOS>;)
 
 /* Keymap */
 
@@ -311,7 +311,7 @@ ZMK_BASE_LAYER(Sys,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &out OUT_BLE  ___           ___           ___           &bootloader ,   &bootloader   ___           ___           ___           ___         ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &out OUT_USB  &sel_macos    &sel_linux    ___           &sys_reset  ,   &sys_reset    ___           ___           ___           ___         ,
+    &out OUT_USB  U_S_MACOS     U_S_LINUX     ___           &sys_reset  ,   &sys_reset    ___           ___           ___           ___         ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
                                               ___           ___         ,   ___           ___
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
