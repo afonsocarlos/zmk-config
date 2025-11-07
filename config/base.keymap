@@ -194,7 +194,7 @@ ZMK_MACRO(less_eq,    bindings = <&kp LT &kp EQUAL>;)    // <=
 ZMK_MACRO(double_eq,  bindings = <&kp EQUAL &kp EQUAL>;)  // ==
 ZMK_MACRO(triple_eq,  bindings = <&kp EQUAL &kp EQUAL &kp EQUAL>;)  // ===
 ZMK_MACRO(not_eq,     bindings = <&kp EXCL &kp EQUAL>;)     // !=
-ZMK_MACRO(greater_eq, bindings = <&kp EQUAL &kp GT>;) // >=
+ZMK_MACRO(greater_eq, bindings = <&kp GT &kp EQUAL>;) // >=
 ZMK_MACRO(null_safe,  bindings = <&kp QMARK &kp MINUS &kp GT>;)  // ?->
 ZMK_MACRO(thin_arrow, bindings = <&kp MINUS &kp GT>;) // ->
 ZMK_MACRO(fat_arrow,  bindings = <&kp EQUAL &kp GT>;)  // =>
