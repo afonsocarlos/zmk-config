@@ -18,8 +18,10 @@
 ZMK_LEADER_SEQUENCE(pt_aa,      &uc UC_PT_AA,           A A)  // á
 ZMK_LEADER_SEQUENCE(pt_ac,      &uc UC_PT_A_CIRCUMFLEX, A I)  // â
 ZMK_LEADER_SEQUENCE(pt_atilde,  &uc UC_PT_A_TILDE,      A N)  // ã
-/* ZMK_LEADER_SEQUENCE(pt_oa,      &uc UC_PT_OA,           O A)  // ó */
-/* ZMK_LEADER_SEQUENCE(pt_oc,      &uc UC_PT_O_CIRCUMFLEX, O I)  // ô */
+ZMK_LEADER_SEQUENCE(pt_oa,      &uc UC_PT_OA,           O A)  // ó
+ZMK_LEADER_SEQUENCE(pt_oc,      &uc UC_PT_O_CIRCUMFLEX, O I)  // ô
+/* ZMK_LEADER_SEQUENCE(pt_otilde,  &uc UC_PT_O_TILDE,      O N)  // õ */
+ZMK_LEADER_SEQUENCE(pt_ec,      &uc UC_PT_E_CIRCUMFLEX, E I)  // ê
 ZMK_LEADER_SEQUENCE(pt_cedilla, &uc UC_PT_C_CEDILLA,    C C)  // ç
 
 /* Greek letters */
