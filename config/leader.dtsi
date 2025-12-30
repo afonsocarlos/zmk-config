@@ -16,6 +16,11 @@
 
 /* Portuguese accented letters */
 ZMK_LEADER_SEQUENCE(pt_aa,      &uc UC_PT_AA,           A A)  // á
+ZMK_LEADER_SEQUENCE(pt_ac,      &uc UC_PT_A_CIRCUMFLEX, A I)  // â
+ZMK_LEADER_SEQUENCE(pt_atilde,  &uc UC_PT_A_TILDE,      A N)  // ã
+ZMK_LEADER_SEQUENCE(pt_oa,      &uc UC_PT_OA,           O A)  // ó
+ZMK_LEADER_SEQUENCE(pt_oc,      &uc UC_PT_O_CIRCUMFLEX, O I)  // ô
+ZMK_LEADER_SEQUENCE(pt_cedilla, &uc UC_PT_C_CEDILLA,    C C)  // ç
 
 /* Greek letters */
 ZMK_LEADER_SEQUENCE(el_alpha,   &uc UC_EL_ALPHA,      G A)  // α
