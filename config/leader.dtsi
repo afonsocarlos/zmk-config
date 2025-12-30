@@ -14,6 +14,9 @@
         }; \
     };
 
+ZMK_MACRO(accent_ao,   bindings = <&uc UC_PT_A_TILDE &kp O>;)        // ÃO
+ZMK_MACRO(accent_cao,  bindings = <&uc UC_PT_C_CEDILLA &accent_ao>;)     // ÇÃO
+
 /* Portuguese accented letters */
 ZMK_LEADER_SEQUENCE(pt_aa,      &uc UC_PT_AA,           A A)  // á
 ZMK_LEADER_SEQUENCE(pt_ac,      &uc UC_PT_A_CIRCUMFLEX, A I)  // â
@@ -23,6 +26,8 @@ ZMK_LEADER_SEQUENCE(pt_oc,      &uc UC_PT_O_CIRCUMFLEX, O I)  // ô
 /* ZMK_LEADER_SEQUENCE(pt_otilde,  &uc UC_PT_O_TILDE,      O N)  // õ */
 ZMK_LEADER_SEQUENCE(pt_ec,      &uc UC_PT_E_CIRCUMFLEX, E I)  // ê
 ZMK_LEADER_SEQUENCE(pt_cedilla, &uc UC_PT_C_CEDILLA,    C C)  // ç
+ZMK_LEADER_SEQUENCE(pt_ao,      &accent_ao,             A O)  // ão
+ZMK_LEADER_SEQUENCE(pt_cao,     &accent_cao,            C A)  // ção
 
 /* Greek letters */
 ZMK_LEADER_SEQUENCE(el_alpha,   &uc UC_EL_ALPHA,      G A)  // α
