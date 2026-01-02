@@ -15,9 +15,10 @@
     };
 
 #define UC_PT_O_TILDE 0xf5 0xd5  // õ/Õ
-ZMK_MACRO(accent_ao,   bindings = <&uc UC_PT_A_TILDE &kp O>; wait-ms = <100>;)        // ÃO
-ZMK_MACRO(accent_oes,  bindings = <&uc UC_PT_O_TILDE &kp E &kp S>; wait-ms = <100>;)  // ÕES
-ZMK_MACRO(accent_cao,  bindings = <&uc UC_PT_C_CEDILLA &accent_ao>; wait-ms = <100>;)     // ÇÃO
+ZMK_MACRO(accent_ao,   bindings = <&uc UC_PT_A_TILDE &kp O>; wait-ms = <50>; tap-ms = <50>;)         // ÃO
+ZMK_MACRO(accent_oes,  bindings = <&uc UC_PT_O_TILDE &kp E &kp S>; wait-ms = <50>; tap-ms = <50>;)   // ÕES
+ZMK_MACRO(accent_cao,  bindings = <&uc UC_PT_C_CEDILLA &accent_ao>;)  // ÇÃO
+ZMK_MACRO(accent_coes, bindings = <&uc UC_PT_C_CEDILLA &accent_oes>;) // ÇÕES
 
 /* Portuguese accented letters */
 ZMK_LEADER_SEQUENCE(pt_aa,      &uc UC_PT_AA,           A A)  // á
@@ -29,7 +30,9 @@ ZMK_LEADER_SEQUENCE(pt_otilde,  &uc UC_PT_O_TILDE,      O N)  // õ
 ZMK_LEADER_SEQUENCE(pt_ec,      &uc UC_PT_E_CIRCUMFLEX, E I)  // ê
 ZMK_LEADER_SEQUENCE(pt_cedilla, &uc UC_PT_C_CEDILLA,    C C)  // ç
 ZMK_LEADER_SEQUENCE(pt_ao,      &accent_ao,             A O)  // ão
+ZMK_LEADER_SEQUENCE(pt_oes,     &accent_oes,            O E)  // ões
 ZMK_LEADER_SEQUENCE(pt_cao,     &accent_cao,            C A)  // ção
+ZMK_LEADER_SEQUENCE(pt_coes,    &accent_coes,           C O)  // ções
 
 /* Greek letters */
 ZMK_LEADER_SEQUENCE(el_alpha,   &uc UC_EL_ALPHA,      G A)  // α
