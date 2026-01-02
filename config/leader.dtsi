@@ -14,8 +14,8 @@
         }; \
     };
 
-ZMK_MACRO(accent_ao,   bindings = <&uc UC_PT_A_TILDE &kp O>;)        // ÃO
-ZMK_MACRO(accent_cao,  bindings = <&uc UC_PT_C_CEDILLA &accent_ao>;)     // ÇÃO
+ZMK_MACRO(accent_ao,   bindings = <&uc UC_PT_A_TILDE &kp O>; wait-ms = <100>;)        // ÃO
+ZMK_MACRO(accent_cao,  bindings = <&uc UC_PT_C_CEDILLA &accent_ao>; wait-ms = <100>;)     // ÇÃO
 
 /* Portuguese accented letters */
 ZMK_LEADER_SEQUENCE(pt_aa,      &uc UC_PT_AA,           A A)  // á
