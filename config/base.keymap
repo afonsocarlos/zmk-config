@@ -199,6 +199,7 @@ ZMK_MACRO(thin_arrow, bindings = <&kp MINUS &kp GT>;) // ->
 ZMK_MACRO(fat_arrow,  bindings = <&kp EQUAL &kp GT>;)  // =>
 ZMK_MACRO(double_col, bindings = <&kp COLON &kp COLON>;) // ::
 ZMK_MACRO(pipe_op,    bindings = <&kp PIPE &kp GT>;)    // |>
+ZMK_MACRO(sql_ego,    bindings = <&kp BSLH &kp G>;)    // \G
 
 // Unicode OS swap
 #define U_S_MACOS &uc UC_SET_MACOS
@@ -281,7 +282,7 @@ ZMK_BASE_LAYER(Sym,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     ___           ___           ___           ___           ___         ,   ___           &kp N7        &kp N8        &kp N9        ___         ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    ___           ___           ___           ___           ___         ,   &less_eq      &double_eq    &triple_eq    &not_eq       &greater_eq ,
+    ___           ___           ___           ___           &sql_ego    ,   &less_eq      &double_eq    &triple_eq    &not_eq       &greater_eq ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     ___           ___           ___           ___           ___         ,   &null_safe    &thin_arrow   &fat_arrow    &double_col   &pipe_op    ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
