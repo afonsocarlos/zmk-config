@@ -186,6 +186,8 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 
 // Sticky shift + leader.
 ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
+ZMK_MACRO(lrpar_lgt, bindings = <&lpar_lt &rpar_gt>;)
+ZMK_MACRO(lrbkt, bindings = <&kp LBKT &kp RBKT>;)
 
 /* Sym cluster */
 
