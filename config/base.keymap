@@ -201,7 +201,7 @@ ZMK_MACRO(thin_arrow, bindings = <&kp MINUS &kp GT>;) // ->
 ZMK_MACRO(fat_arrow,  bindings = <&kp EQUAL &kp GT>;)  // =>
 ZMK_MACRO(double_col, bindings = <&kp COLON &kp COLON>;) // ::
 ZMK_MACRO(pipe_op,    bindings = <&kp PIPE &kp GT>;)    // |>
-ZMK_MACRO(sql_ego,    bindings = <&kp BSLH &kp G>;)    // \G
+ZMK_MACRO(sql_ego,    bindings = <&kp BSLH &kp LS(G)>;)    // \G
 
 // Unicode OS swap
 #define U_S_MACOS &uc UC_SET_MACOS
