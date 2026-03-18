@@ -97,6 +97,7 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 #define NAV_DOWN  &mt LC(END)  DOWN  // Tap: down  | Long-tap: end   of doc.
 #define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
 #define NAV_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
+#define GAME_ESC  &mt LCTRL    ESC   // Tap: esc   | Long-tap: ctrl.
 
 // Mask CTRL on left/right hold to avoid accidental jumps to start/end of doc.
 #define MASK_MODS(NAME, MODS, BINDING)                                         \
@@ -259,7 +260,7 @@ ZMK_BASE_LAYER(Game,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &kp TAB       &kp Q         &kp W         &kp E         &kp R       ,   ___           &mkp LCLK     U_MS_U        &mkp RCLK     U_WH_U      ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LCTRL     &kp A         &kp S         &kp D         &kp F       ,   ___           U_MS_L        U_MS_D        U_MS_R        U_WH_D      ,
+    GAME_ESC      &kp A         &kp S         &kp D         &kp F       ,   ___           U_MS_L        U_MS_D        U_MS_R        U_WH_D      ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp LSHFT     &kp N1        &kp N2        &kp N3        &kp N4      ,   U_WH_L        &mkp MB4      &mkp MCLK     &mkp MB5      U_WH_R      ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
