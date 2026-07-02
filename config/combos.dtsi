@@ -13,8 +13,8 @@
 #define COMBO_IDLE_FAST 50
 #define COMBO_IDLE_SLOW 10
 
-#define COMBO_SAVE &hml LC(LALT)LC(S)
-#define COMBO_TAB  &hml LS(LCTRL)TAB
+#define COMBO_SAVE &hml LC(LALT) LS(LC(S))
+#define COMBO_TAB  &hml LS(LCTRL) TAB
 
 #define TAB_RT LC(TAB)
 #define TAB_LT LS(LC(TAB))
