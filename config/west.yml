@@ -28,11 +28,16 @@ manifest:
       url-base: https://github.com/urob
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: cormoran
+      url-base: https://github.com/cormoran
 
   projects:
+    # Required: patched ZMK with Custom Studio RPC support
     - name: zmk
-      remote: zmkfirmware
-      import: app/west.yml
+      remote: cormoran
+      revision: main+custom-studio-protocol
+      import:
+        file: app/west.yml
 
     - name: zmk-dongle-display
       remote: afonsocarlos
@@ -51,6 +56,10 @@ manifest:
       path: modules/zmk/tri-state
     - name: zmk-unicode
       path: modules/zmk/unicode
+    - name: zmk-feature-os-detection
+      remote: cormoran
+      revision: main
+      import: true # also pulls in zmk-feature-custom-settings
 
     # Only source necessary Zephyr modules. Remove this entire section to restore
     # the default (needed for less common hardware).
