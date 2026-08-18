@@ -66,8 +66,16 @@
                require-prior-idle-ms = <50>; hold-trigger-on-release;          \
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
+#define MAKE_HRMT(NAME, TAP, TRIGGER_POS)                                 \
+  ZMK_HOLD_TAP(NAME, bindings = <&trans>, <TAP>; flavor = "balanced";            \
+               tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
+               require-prior-idle-ms = <50>; hold-trigger-on-release;          \
+               hold-trigger-key-positions = <TRIGGER_POS>;)
+
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
+MAKE_HRMT(hmlt, &kp, KEYS_R THUMBS) // Left-hand HRMs.
+MAKE_HRMT(hmrt, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 // Hack: Make HRM combos tap-only (cf, ZMK issue #544).
 #define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
@@ -241,7 +249,7 @@ ZMK_BASE_LAYER(Nav,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &kp F12       &kp F7        &kp F8        &kp F9        ___         ,   &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       NAV_BSPC    ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &hml LGUI F11 &hml LALT F4  &hml LCTRL F5 &hml LSHFT F6 ___         ,   NAV_LEFT      NAV_DOWN      NAV_UP        NAV_RIGHT     &kp RET     ,
+    &hmlt F11     &hmlt F4      &hmlt F5      &hmlt F6      ___         ,   NAV_LEFT      NAV_DOWN      NAV_UP        NAV_RIGHT     &kp RET     ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp F10       &kp F1        &kp F2        &kp F3        ___         ,   &kp INS       &kp TAB       ___           ___           &kp CAPS    ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
@@ -265,7 +273,7 @@ ZMK_BASE_LAYER(Num,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     ___           ___           ___           ___           ___         ,   ___           &kp N7        &kp N8        &kp N9        ___         ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    ___           ___           ___           ___           ___         ,   ___           &hmr LSHFT N4 &hmr LCTRL N5 &hmr LALT N6 &hmr LGUI N0,
+    ___           ___           ___           ___           ___         ,   ___           &hmrt N4      &hmrt N5      &hmrt N6     &hmrt N0     ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     ___           ___           ___           ___           ___         ,   ___           &kp N1        &kp N2        &kp N3        &kp DOT     ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
