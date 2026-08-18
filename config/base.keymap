@@ -203,8 +203,8 @@ ZMK_MACRO(sql_ego,    bindings = <&kp BSLH &kp LS(G)>;)    // \G
 // Automatic OS Layer Swap for specific Bluetooth Profile
 // Selecting the profile also permanently switches to the matching base
 // layer (&to), so HRMs/combos on that layer stay in sync with the OS.
-ZMK_MACRO_ONE_PARAM(bt_sel_linux, bindings = <&macro_param_1to1>, <&bt BT_SEL MACRO_PLACEHOLDER>, <&to DEF>, <U_S_LINUX>;)
-ZMK_MACRO_ONE_PARAM(bt_sel_macos, bindings = <&macro_param_1to1>, <&bt BT_SEL MACRO_PLACEHOLDER>, <&to MAC>, <U_S_MACOS>;)
+ZMK_MACRO_ONE_PARAM(bt_sel_linux, bindings = <&macro_param_1to2>, <&bt BT_SEL MACRO_PLACEHOLDER>, <&to DEF>, <U_S_LINUX>;)
+ZMK_MACRO_ONE_PARAM(bt_sel_macos, bindings = <&macro_param_1to2>, <&bt BT_SEL MACRO_PLACEHOLDER>, <&to MAC>, <U_S_MACOS>;)
 
 /* Keymap */
 
