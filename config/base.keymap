@@ -182,13 +182,13 @@ ZMK_MACRO(lrbkt, bindings = <&kp LBKT &kp RBKT>;)
 ZMK_MACRO(less_eq,    bindings = <&kp LT &kp EQUAL>;)    // <=
 ZMK_MACRO(double_eq,  bindings = <&kp EQUAL &kp EQUAL>;)  // ==
 ZMK_MACRO(triple_eq,  bindings = <&kp EQUAL &kp EQUAL &kp EQUAL>;)  // ===
+ZMK_MACRO(triple_neq, bindings = <&kp EXCL &kp EQUAL &kp EQUAL>;)    // !==
 ZMK_MACRO(not_eq,     bindings = <&kp EXCL &kp EQUAL>;)     // !=
 ZMK_MACRO(greater_eq, bindings = <&kp GT &kp EQUAL>;) // >=
 ZMK_MACRO(null_safe,  bindings = <&kp QMARK &kp MINUS &kp GT>;)  // ?->
 ZMK_MACRO(thin_arrow, bindings = <&kp MINUS &kp GT>;) // ->
 ZMK_MACRO(fat_arrow,  bindings = <&kp EQUAL &kp GT>;)  // =>
 ZMK_MACRO(double_col, bindings = <&kp COLON &kp COLON>;) // ::
-ZMK_MACRO(pipe_op,    bindings = <&kp PIPE &kp GT>;)    // |>
 ZMK_MACRO(sql_ego,    bindings = <&kp BSLH &kp LS(G)>;)    // \G
 
 // Unicode OS swap
@@ -274,7 +274,7 @@ ZMK_BASE_LAYER(Sym,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     ___           ___           ___           ___           &sql_ego    ,   &less_eq      &double_eq    &triple_eq    &not_eq       &greater_eq ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    ___           ___           ___           ___           ___         ,   &null_safe    &thin_arrow   &fat_arrow    &double_col   &pipe_op    ,
+    ___           ___           ___           ___           ___         ,   &null_safe    &thin_arrow   &triple_neq   &fat_arrow    &double_col ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
                                               ___           ___         ,   ___           ___
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
